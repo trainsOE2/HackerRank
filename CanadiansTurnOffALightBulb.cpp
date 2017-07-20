@@ -11,8 +11,8 @@ int main() {
     i=0;
     for (i=0 ; i<n ; i++)
     {
-        if(arr[i] == 0) 
-        {            
+        if(arr[i] == 0)
+        {
             arr[i]=1;
             for( j=i+1; j<=n ; j++)
             {
@@ -23,10 +23,10 @@ int main() {
             }
             count++;
         }
-       
+
     }
     cout << count;
-    
-    
+
+
     return 0;
 }
