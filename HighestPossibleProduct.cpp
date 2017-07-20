@@ -13,7 +13,7 @@ int main() {
     cin >> n;
     int arr[n];
     for ( i=0 ; i<n ; i++)
-    {       
+    {
         cin >> arr[n];
         arrvector.push_back(arr[n]);
     }
@@ -21,6 +21,6 @@ int main() {
     for( k=n-1 ; k >= n-3 ; k--)
         prod *= arrvector[k];
     cout << prod;
-        
+
     return 0;
 }
