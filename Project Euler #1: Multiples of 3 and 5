@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+int fin_term (int, int);
+int sum(int, int);
+int times;
+
+int main() {
+    int n, i, t;
+    cin >> t;
+    while(t--)
+    {
+        cin >> n;
+        int sum_three=0, sum_five=0, sum_fifteen=0;
+        sum_three = sum(3,n);
+        sum_five = sum(5,n);
+        if( n >= 15)
+            sum_fifteen = sum(15,n);
+        int val = sum_three + sum_five - sum_fifteen;
+        
+        cout << val << "\n";
+    }
+    return 0;
+}
+
+int fin_term(int a, int n)
+{   
+    if(n%a != 0)
+    {
+        int sub = n%a;
+        n -= sub;
+        times = n/a;
+    }
+    else
+    {
+        n -= a;
+        times = n/a;
+    }
+    
+    return n;
+}
+
+int sum(int a, int n)
+{
+    int l_term = fin_term(a,n);
+
+    int total = (times*(a + l_term))/2;
+    return total;
+}
