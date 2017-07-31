@@ -1,33 +1,37 @@
-// Testcases 2 and 3 => :(
 #include <iostream>
 using namespace std;
-int fin_term (int, int);
-int sum(int, int);
-int times;
+long long fin_term (long long, long long);
+long long sum(long long, long long);
+long long times;
 
 int main() {
-    int n, i, t;
+    long long n, i, t, val;
     cin >> t;
     while(t--)
     {
         cin >> n;
-        int sum_three=0, sum_five=0, sum_fifteen=0;
-        sum_three = sum(3,n);
-        sum_five = sum(5,n);
-        if( n >= 15)
-            sum_fifteen = sum(15,n);
-        int val = sum_three + sum_five - sum_fifteen;
-        
+        if(n>3)
+        {
+            long long sum_three=0, sum_five=0, sum_fifteen=0;
+            sum_three = sum(3,n);
+            sum_five = sum(5,n);
+            if( n > 15)
+                sum_fifteen = sum(15,n);
+            val = sum_three + sum_five - sum_fifteen;
+        }
+        else
+            val = 0;
+
         cout << val << "\n";
     }
     return 0;
 }
 
-int fin_term(int a, int n)
+long long fin_term(long long a, long long n)
 {   
     if(n%a != 0)
     {
-        int sub = n%a;
+        long long sub = n%a;
         n -= sub;
         times = n/a;
     }
@@ -40,10 +44,10 @@ int fin_term(int a, int n)
     return n;
 }
 
-int sum(int a, int n)
+long long sum(long long a, long long n)
 {
-    int l_term = fin_term(a,n);
+    long long l_term = fin_term(a,n);
 
-    int total = (times*(a + l_term))/2;
+    long long total = (times*(a + l_term))/2;
     return total;
 }
