@@ -1,0 +1,13 @@
+#include <cmath>
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+
+int main() {
+    int b, a;
+    cin >> b >> a;
+    float ans = (float)(2*a)/b;
+    cout << fixed << setprecision(0) << ceil(ans);
+    return 0;
+}
