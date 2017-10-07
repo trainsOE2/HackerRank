@@ -1,0 +1,71 @@
+#include<iostream>
+#include<vector>
+#include<math.h>
+using namespace std;
+
+int main()
+{
+    int x;
+    cin >> x;
+ while(x--)
+ {       
+  int n;
+  cin >> n;
+  vector<int> siv;
+  vector<int> prime;
+  int t = n;
+  int i = 0;
+  int q = sqrt(n);
+  int m, j;
+  while(t--)
+  {
+    siv.push_back(++i);
+  }
+
+  for (i=0 ; i<q ; i++)
+  {
+    if(siv[i] != 1)
+      j = i + siv[i];
+    while( j <= n)
+    {
+      siv[j] = 1;
+      j += siv[i];
+    }
+  }
+
+  for( i=0 ; i<siv.size() ; i++)
+  {
+    if(siv[i] != 1)
+    {
+      prime.push_back(siv[i]);
+    }
+  }
+
+  int cnt = -1;
+  i = 0;
+  long long int val = 1;
+  while(val <= n)
+  {
+    if(n==1)
+    {
+      cnt = 0;
+      break;
+    }
+    cnt++;
+    val *= prime[i];
+    i++;
+  }
+
+
+  /*for (int x:siv)
+    cout << x <<' ';
+
+  cout << '\n';
+
+  for (int x:prime)
+    cout << x << ' ';*/
+
+  cout << '\n' << cnt;
+ }
+  return 0;
+}
