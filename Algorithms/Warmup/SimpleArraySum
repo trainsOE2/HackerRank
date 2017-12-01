@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+
+int main() {
+    int n;
+    int tot = 0;
+    int ele;
+    cin >> n;
+    while(n--){
+        cin >> ele;
+        tot += ele;
+    }
+    cout << tot;
+    return 0;
+}
