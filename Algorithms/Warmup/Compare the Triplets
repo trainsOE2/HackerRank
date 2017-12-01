@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    int a[3], b[3];
+    int i=0;
+    int A=0, B=0;
+    while(i < 3){
+        cin >> a[i];
+        i++;
+    }
+    i=0;
+    while(i < 3){
+        cin >> b[i];
+        i++;
+    }
+    i=0;
+    while(i < 3){
+        if(a[i] > b[i])
+            A++;
+        else if(a[i] < b[i])
+            B++;
+        i++;
+    }
+    cout << A << ' ' << B;
+    return 0;
+}
