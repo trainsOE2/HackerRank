@@ -1,0 +1,26 @@
+#include <cmath>
+#include <iostream>
+
+using namespace std;
+
+
+int main() {
+    int size;
+    cin >> size;
+    int diag1_sum = 0;
+    int diag2_sum = 0;
+    int arr[size][size];
+    for(int i=0 ; i<size ; i++)
+    {
+        for(int j=0 ; j<size ; j++)
+        {
+            cin >> arr[j][i];
+            if( i == j)
+                diag1_sum += arr[j][i];
+            if( i+j == size-1 )
+                diag2_sum += arr[j][i];
+        }
+    }
+    cout << abs(diag1_sum-diag2_sum);
+    return 0;
+}
