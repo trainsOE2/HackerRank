@@ -1,0 +1,23 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+
+int main() {
+    float num_ele;
+    int ele;
+    float p=0;
+    float n=0;
+    float z=0;
+    cin >> num_ele;
+    for (int i=0 ; i<num_ele ; i++){
+        cin >> ele;
+        if( ele*(-1) > 0)
+            n += 1;
+        else if( ele*(1) == 0)
+            z+=1;
+        else p += 1;
+    }
+    cout << setprecision(6) << fixed << p/num_ele << endl << n/num_ele << endl << z/num_ele;
+    return 0;
+}
