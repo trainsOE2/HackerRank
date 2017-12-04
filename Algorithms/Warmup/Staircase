@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+
+int main() {
+    int n, i, m, x;
+    cin >> n;
+    int j = n-2;
+    for ( x=0 ; x<n ; x++)
+    {
+        for( i = 0 ; i <= j ; i++)
+        {
+            cout << ' ';
+        }
+        
+        for( m = i ; m <= n-1 ; m++)
+        {
+            cout << '#';
+        }
+        
+        cout << '\n';
+        j--;
+    }
+    return 0;
+}
