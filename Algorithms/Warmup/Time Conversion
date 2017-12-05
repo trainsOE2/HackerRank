@@ -1,0 +1,35 @@
+#include <string>
+#include <iomanip>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int ctoi(char c)
+{
+    return c-'0';
+}
+
+int main() {
+    string time;
+    cin >> time;
+    
+        int h1 = ctoi(time[0]);
+        int h2 = ctoi(time[1]);
+        int hh = 10*h1 + h2;
+    
+    if((time[8] == 'P') && (hh < 12))
+    {
+        hh = 24 - (12 - hh);
+        cout << hh << time.substr(2, 6); 
+    }
+    else if((time[8]=='A') && (hh==12))
+    {
+        cout << "00" << time.substr(2,6);
+    }
+    else
+    {
+        cout << time.substr(0, 8);
+    }
+    
+    
+    return 0;
+}
