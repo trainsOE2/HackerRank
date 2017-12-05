@@ -1,0 +1,29 @@
+#include <iostream>
+#include <algorithm>
+typedef long long int lli;
+using namespace std;
+
+
+int main() {
+    lli arr[5];
+    lli small=0, big=0;
+    cin >> arr[0] >> arr[1] >> arr[2] >> arr[3] >> arr[4];
+    sort(arr, arr+5);
+    int i=0;
+    while(i<4)
+    {
+        small += arr[i];
+        i++;
+    }
+    int j=4;
+    while(j>0)
+    {
+        big += arr[j];
+        j--;
+    }
+    
+    cout << small << ' ' << big;
+    
+    
+    return 0;
+}
