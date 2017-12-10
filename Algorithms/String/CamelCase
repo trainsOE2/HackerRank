@@ -1,0 +1,20 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string s; 
+    int i=0;
+    int count=0;   
+    cin >> s;
+    int len = s.size(); 
+    while(i < len){
+        if( ((int)s[i]>= 65) && ((int)s[i] <= 90) ){
+            count++;
+        }
+        i++;
+    }
+    cout << ++count ;
+    
+    return 0;
+}
